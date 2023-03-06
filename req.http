@@ -1,0 +1,85 @@
+POST http://localhost:4000/customer-api/customer
+Content-Type: application/json
+
+{
+  "customer_name":"vamsi",
+  "customer_email":"vamsi@gmail.com"
+}
+###
+POST http://localhost:4000/product-api/product
+Content-Type: application/json
+
+{
+  "product_name":"tea",
+  "price":10
+}
+
+###
+POST http://localhost:4000/customer-api/customer-review/customer-id/1/product-id/1
+Content-Type: application/json
+
+{
+  "customer_id":3,
+  "product_id":3,
+  "date":"2023-02-27",
+  "review_desc":"Not Pure Milk"
+}
+
+
+
+###
+POST http://localhost:4000/customer-api/customer-review
+Content-Type: application/json
+
+{
+  "customer_id":1,
+  "reviews":
+  {
+    "product_id":1,
+    "date":"2023-02-27",
+    "review_desc":"Nice Product"
+  }
+
+}
+
+###
+POST http://localhost:4000/customer-api/customer-order
+Content-Type: application/json
+
+{
+  "customer_id":4,
+  "product_id":2,
+  "date":"2023-1-10"
+}
+
+
+###
+POST http://localhost:4000/customer-api/add-address
+Content-Type: application/json
+
+{
+  "customer_name":"ram",
+  "customer_email":"ram@gmail.com",
+  "address":{
+    "street":"Hitec city",
+    "city":"hyderabad",
+    "state":"TS",
+    "pincode":500081
+  }
+
+}
+
+###
+GET http://localhost:4000/customer-api/customers
+
+###
+GET http://localhost:4000/product-api/products
+
+### 
+GET http://localhost:4000/customer-api/customer-id/2/reviews
+
+###
+GET http://localhost:4000/customer-api/customer-orders/1
+
+###
+GET http://localhost:4000/customer-api/address/customer_id/2
